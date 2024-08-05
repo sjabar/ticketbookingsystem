@@ -28,6 +28,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Optional<UserDetails> userOptional = userDetailsDao.findById(userId);
         return userOptional.orElse(null);
     }
+    
+    @Override
+    public  List<UserDetails> getUsersBySection(String section) {
+        return userDetailsDao.findUsersBySection(section);
+    }
 
     @Override
     public List<UserDetails> getAllUsers() {

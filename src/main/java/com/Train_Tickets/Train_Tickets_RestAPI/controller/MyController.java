@@ -30,9 +30,8 @@ public class MyController {
     }
 
     @GetMapping("/users/{section}")
-    public List<UserDetails> getUsersBySection(@PathVariable String section) {
-        // Logic to get users by section
-        return null;
+    public List<UserDetails> getSection(@PathVariable String section) {
+        return userDetailsDao.findUsersBySection(section);
     }
 
     @DeleteMapping("/remove/{id}")

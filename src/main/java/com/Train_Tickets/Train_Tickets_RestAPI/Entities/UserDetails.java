@@ -19,16 +19,31 @@ public class UserDetails {
     private String fromStation;
     private String toStation;
     private String seatAllocation;
+    private String section;
 
-    public UserDetails() {}
+    public String getSection() {
+		return section;
+	}
 
-    public UserDetails(String firstName, String lastName, String email, String fromStation, String toStation, String seatAllocation) {
+	public void setSection(String section) {
+		this.section = section;
+	}
+
+	public UserDetails() {}
+
+    public UserDetails(String firstName, String lastName, String email, String fromStation, String toStation, 
+    		String seatAllocation, String section) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.fromStation = fromStation;
         this.toStation = toStation;
         this.seatAllocation = seatAllocation;
+        if(section.isEmpty()){
+        	section ="sectionA";
+        	this.section = section;
+        }
+        
     }
 
     public Long getId() {
@@ -97,6 +112,8 @@ public class UserDetails {
                 ", fromStation='" + fromStation + '\'' +
                 ", toStation='" + toStation + '\'' +
                 ", seatAllocation='" + seatAllocation + '\'' +
+                ", section='" + section + '\'' +
+                
                 '}';
     }
 
@@ -111,6 +128,10 @@ public class UserDetails {
 	}
 
 	public List<UserDetails> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public List<UserDetails> findUsersBySection(String section) {
 		// TODO Auto-generated method stub
 		return null;
 	}

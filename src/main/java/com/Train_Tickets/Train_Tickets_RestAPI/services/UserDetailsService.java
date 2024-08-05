@@ -8,6 +8,8 @@ public interface UserDetailsService {
     UserDetails addUser(UserDetails userDetails);
 
     UserDetails getUserById(Long userId);
+    
+    List<UserDetails> getUsersBySection(String section);
 
     List<UserDetails> getAllUsers();
 
